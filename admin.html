@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Panel Administrador</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header class="hero">
+
+<div class="overlay">
+
+<h1>⚙️ Panel de Administración</h1>
+
+<p>Administrador: Th3Foxy</p>
+
+</div>
+
+</header>
+
+<section class="admin-container">
+
+<h2>➕ Crear Partido</h2>
+
+<form id="matchForm">
+
+<input
+type="text"
+id="teamA"
+placeholder="Equipo Local"
+required>
+
+<input
+type="text"
+id="teamB"
+placeholder="Equipo Visitante"
+required>
+
+<input
+type="date"
+id="matchDate"
+required>
+
+<button type="submit">
+
+Crear Partido
+
+</button>
+
+</form>
+
+</section>
+
+<section class="admin-container">
+
+<h2>🏆 Registrar Resultado</h2>
+
+<form id="resultForm">
+
+<input
+type="text"
+id="winner"
+placeholder="Ganador o EMPATE">
+
+<button type="submit">
+
+Guardar Resultado
+
+</button>
+
+</form>
+
+</section>
+
+<section class="admin-container">
+
+<h2>📸 Subir Capturas Discord</h2>
+
+<input
+type="file"
+id="screenshots"
+multiple
+accept="image/*">
+
+<button id="processBtn">
+
+Procesar Capturas
+
+</button>
+
+<div id="ocrPreview"></div>
+
+</section>
+
+<script src="js/admin.js"></script>
+
+</body>
+
+                            </html>
