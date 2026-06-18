@@ -1,0 +1,1 @@
+# ranking-airtm-worldcup-2026
