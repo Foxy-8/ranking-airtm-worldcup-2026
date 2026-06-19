@@ -56,10 +56,47 @@ ${winner}`
 
 processBtn.addEventListener(
 "click",
-function(){
+async function(){
+
+const files =
+document.getElementById(
+"screenshots"
+).files;
+
+if(files.length===0){
 
 alert(
-"OCR Discord será conectado en la Parte 3"
+"Selecciona capturas"
+);
+
+return;
+
+}
+
+const names =
+await extractNames(files);
+
+const preview =
+document.getElementById(
+"ocrPreview"
+);
+
+preview.innerHTML="";
+
+names.forEach(name=>{
+
+const div =
+document.createElement("div");
+
+div.innerText=name;
+
+preview.appendChild(div);
+
+});
+
+alert(
+`${names.length}
+usuarios únicos detectados`
 );
 
 }
