@@ -36,10 +36,36 @@ line = line
 .replace(/[^\w\s]/g,"")
 .trim();
 
-if(line.length > 2){
+const bannedWords = [
+"online",
+"offline",
+"members",
+"member",
+"roles",
+"channels",
+"voice",
+"text",
+"discord",
+"united",
+"states",
+"paraguay",
+"draw",
+"empate"
+];
 
-uniqueNames.add(line);
+const cleanLine = line.toLowerCase();
 
+const isBanned =
+bannedWords.some(word =>
+cleanLine.includes(word)
+);
+
+if(
+!isBanned &&
+line.length >= 3 &&
+line.length <= 25
+){
+    uniqueNames.add(line);
 }
 
 }
