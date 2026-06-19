@@ -60,10 +60,26 @@ bannedWords.some(word =>
 cleanLine.includes(word)
 );
 
+const hasManyNumbers =
+(line.match(/\d/g) || []).length >= 3;
+
+const hasVS =
+line.toLowerCase().includes("vs");
+
+const hasVotes =
+line.toLowerCase().includes("voto");
+
+const looksLikeDiscordId =
+/_[0-9]/.test(line);
+
 if(
 !isBanned &&
+!hasManyNumbers &&
+!hasVS &&
+!hasVotes &&
+!looksLikeDiscordId &&
 line.length >= 3 &&
-line.length <= 25
+line.length <= 30
 ){
     uniqueNames.add(line);
 }
